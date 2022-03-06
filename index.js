@@ -346,7 +346,6 @@ function debounceData(){
  id = setTimeout(async()=>{
   let queryIs = queryInputBox.value;
   let queryUrl = `https://api.imgur.com/3/gallery/search?q=${queryIs}`;
-  alert("hey")
 
 
   await fetch(queryUrl,{
