@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>imgur</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/0e3d6c2c8d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="topDiv">
+      <div id="topDiv__navDiv">
+        <div id="topDiv__navDiv__left">
+          <img
+            class="topDiv__navDiv__leftDiv__logo"
+            src="images/imgurLogo.png"
+            alt=""
+          />
+          <button class="btn topDiv__navDiv__leftDiv__newPost">
+            <img
+              src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg"
+              alt=""
+              class="topDiv__navDiv__leftDiv__newPost__img"
+            />
+            <span class="topDiv__navDiv__leftDiv__newPost__text">
+                New Post</span>
+          </button>
+        </div>
+        
+        <div id="topDiv__navDiv__middle">
+          <input
+            type="text"
+            class="topDiv__navDiv__middle__searchBox"
+            id="queryInputBox"
+            placeholder="Images, #tags, @users oh my!"
+          />
+          <img
+            src="images/searchIcon.svg"
+            alt=""
+            class="topDiv__navDiv__middle__searchIcon"
+          />
+        </div>
+        
+        <div id="topDiv__navDiv__right">
+          <img
+            src="images/certified.png"
+            alt=""
+            class="topDiv__navDiv__right__certifiedIcon"
+          />
+          <button class="btn btn--blue">Go Ad Free</button>
+          <button class="btn btn--transparent">Sign in</button>
+          <button class="btn">Sign up</button>
+        </div>
+        </div>
+
+      <!-- // debouncing data showing div  -->
+  <div id="topDiv__debounceDataShowDiv">
+
+  </div>
+
+ <!-- // debouncing data showing div  close -->
+
+
+
+
+      <div id="topDiv__messageDiv">
+        <h2 class="topDiv__messageDiv__content">
+          Life is short. Smile while you still have teeth.
+        </h2>
+      </div>
+
+      <div id="topDiv__tagDiv">
+        <div id="topDiv__tagDiv__tagHeadDiv">
+          <h2 class="topDiv__tagHeadDiv__content">explore tags</h2>
+          
+          <h2 class="topDiv__tagHeadDiv__content">more tags+</h2>
+        </div>
+
+        <div id="topDiv__tagDiv__tagImgDiv" ></div>
+      </div>
+    </div>
+
+    <div id="postsDiv">
+      <div id="postNavbar">
+        <div class="postsDiv__postNavbar__left">
+          <h3 class="postsDiv__postNavbar__left__header" id="leftSortHeader">most viral &nbsp;&nbsp; ⯆</h3>
+          <ul class="postsDiv__postNavbar__leftOptions" id="postsDiv__postNavbar__leftOptions">
+              <li class="postsDiv__postNavbar__leftOptions__item" id="mostViral" onClick="changeLeftOptionTitle('most viral')">most viral</li>
+              <li class="postsDiv__postNavbar__leftOptions__item" id="userSubmitted" onClick="changeLeftOptionTitle('user submitted')">User Submitted</li>
+              <li class="postsDiv__postNavbar__leftOptions__item" id="highestScoring" onClick="changeLeftOptionTitle('highest scoring')">Highest Scoring</li>
+          </ul>
+        </div>
+
+        <div class="postsDiv__postNavbar__rightDiv">
+            <div class="postsDiv__postNavbar__right">
+                <h3 class="postsDiv__postNavbar__right__header" id="rightSortHeader">newest &nbsp;&nbsp; ⯆</h3>
+                <ul class="postsDiv__postNavbar__rightOptions" id="postsDiv__postNavbar__rightOptions">
+                    <li class="postsDiv__postNavbar__rightOptions__item" id="mostViral" onClick="changeRightOptionTitle('newest')">Newest</li>
+                    <li class="postsDiv__postNavbar__rightOptions__item" id="userSubmitted" onClick="changeRightOptionTitle('popular')">popular</li>
+                    <li class="postsDiv__postNavbar__rightOptions__item" id="highestScoring" onClick="changeRightOptionTitle('best')">best</li>
+                     <li class="postsDiv__postNavbar__rightOptions__item" id="highestScoring" onClick="changeRightOptionTitle('random')">random</li>
+                </ul>
+              </div>
+
+          <img class="postNavbar__FilterIcons postNavbar__FilterIcons--first" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-filter.551faed00bcf04e07c9e01a6874bd652.svg" alt="">
+          <img class="postNavbar__FilterIcons" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-pause.68f07ce1a7e07bac06d1f2c527d7a9e5.svg" alt="">
+          <img class="postNavbar__FilterIcons" src="images/waterfall.png" alt="">
+        </div>
+      </div>
+      <div id="postsDiv__postsBody"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
