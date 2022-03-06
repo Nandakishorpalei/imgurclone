@@ -117,7 +117,7 @@ margin-left:-2vw;
 }
 
 #topDiv__debounceDataShowDiv{
-    height: 33vw;
+    min-height: 33vw;
     width: 36vw;
     background-color: #53565d;
     margin: 3vw 0 0 30vw;
