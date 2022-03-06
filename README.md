@@ -61,5 +61,5 @@ short data by several sorting methods like popular, new, recent, etc
 
 ---
 ![1 1](https://images2.imgbox.com/52/c7/DrTp7jQE_o.png)
-![1 2](https://images2.imgbox.com/7f/61/laVvxJVh_o.png)
-![1 3](https://images2.imgbox.com/24/42/9xKcmWJl_o.png)
+![1 2](https://images2.imgbox.com/24/42/9xKcmWJl_o.png)
+![1 3](https://images2.imgbox.com/7f/61/laVvxJVh_o.png)
