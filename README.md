@@ -39,7 +39,7 @@
 - `CSS`
 
 ---
-### Tools Used 🔧
+### Tool Used 🔧
 - `Postman`
 - `Github`
 - `Imgur API`
@@ -52,15 +52,21 @@
 
 ### How To Use ✅
 
-User can search data according to their choice by entering query to the input box.
-short data by several sorting methods like popular, new, recent, etc
+- `User can search data according to their choice by entering query to the input box.`
+- `User can upload image to imgur by completing the process after click on new post button`
+- `Sort data by several sorting methods like popular, new, recent, etc.`
+- `User can toggle layout between waterfall and grid layout by clicking the layout button`
+- `and also can control the video autoplay settings.`
+
+
 
 ---
 
 ### Screenshots :camera:
 
 ---
-![1 1](https://i.imgur.com/RjKC3pI.jpg)
-![1 2](https://i.imgur.com/TPDZXQz.jpg)
-![1 3](https://i.imgur.com/cwmFZiE.jpg)
-![1 4](https://i.imgur.com/uFtsbqt.png)
+![1 1](https://i.imgur.com/ELJfpGI.jpg)
+![1 2](https://i.imgur.com/RjKC3pI.jpg)
+![1 3](https://i.imgur.com/TPDZXQz.jpg)
+![1 4](https://i.imgur.com/cwmFZiE.jpg)
+![1 5](https://i.imgur.com/uFtsbqt.png)
