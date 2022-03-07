@@ -100,21 +100,44 @@ async function fetchData(url){
 let url = "https://api.imgur.com/3/gallery/hot/viral/";
 fetchData(url)
 
-
+ 
 //show data
 function showData(data){
 
 let postDivContainer = document.getElementById("postsDiv__postsBody");
 postDivContainer.innerHTML = null;
 
+// grid design starts
+let gridDeisgn = document.getElementById("waterfallDesign").style.display;
+
+// autoplay start
+let autoPlayIs = document.getElementById("autoplay").style.display;
+console.log('autoPlayIs:', autoPlayIs)
+
+
+
+if(gridDeisgn == "block"){
+  postDivContainer.className = "postsDiv__postsBody__waterfall"
+}else{
+  postDivContainer.className = "postsDiv__postsBody__grid"
+}
+
 data.forEach((item)=>{
 
   let postBodyDiv = document.createElement("div");
-  postBodyDiv.className = `postsDiv__postsBody__itemDiv`
+
+  if(gridDeisgn == "block"){
+  postBodyDiv.className = `item`
+  }else{
+    postBodyDiv.className = `postsDiv__postsBody__itemDiv`;
+  }
 
 let postTextDiv = document.createElement("div");
-postTextDiv.className = `postsDiv__postsBody__itemDiv__textDiv`;
-
+if(gridDeisgn == "block"){
+postTextDiv.className = `postsDiv__postsBody__itemDiv__textDiv__waterfall`;
+}else{
+  postTextDiv.className = `postsDiv__postsBody__itemDiv__textDiv__grid`;
+}
 
 //post title div
 let postTitle = document.createElement("h2");
@@ -161,16 +184,33 @@ if(item.images){
   if(extension == "mp4"){
     let video = document.createElement("video");
     video.src = item.images[0].link;
-    video.autoplay = true;
+
+    if(autoPlayIs == "block"){
+      video.autoplay = true;
+    }else{
+      video.autoplay = false;
+    }
+
+
     video.muted = true;
-    video.className=`postsDiv__postsBody__itemDiv__images`;
+
+    if(gridDeisgn == "block"){
+      video.className=`postsDiv__postsBody__itemDiv__images__waterfall`;
+    }else{
+      video.className=`postsDiv__postsBody__itemDiv__images__grid`;
+    }
+
     postBodyDiv.append(video);
   }else{
 
 
 
   let img = document.createElement("img");
-  img.className=`postsDiv__postsBody__itemDiv__images`
+  if(gridDeisgn == "block"){
+    img.className=`postsDiv__postsBody__itemDiv__images__waterfall`;
+  }else{
+    img.className=`postsDiv__postsBody__itemDiv__images__grid`;
+  }
 img.src= item.images[0].link;
 img.alt="imgur"
 postBodyDiv.append(img)
@@ -326,7 +366,6 @@ function debounceData(){
  id = setTimeout(async()=>{
   let queryIs = queryInputBox.value;
   let queryUrl = `https://api.imgur.com/3/gallery/search?q=${queryIs}`;
- 
 
   await fetch(queryUrl,{
     method:"GET",
@@ -376,4 +415,35 @@ function showDebounceData(data){
 
 document.getElementById("createNewPost").addEventListener("click", ()=>{
   window.location.href = "uploadPage.html"
+})
+
+
+
+// layout toggle
+
+document.getElementById("waterfallDesign").addEventListener("click",()=>{
+  document.getElementById("waterfallDesign").style.display = "none";
+  document.getElementById("gridDesign").style.display = "block";
+  showData(data)
+})
+
+document.getElementById("gridDesign").addEventListener("click",()=>{
+  document.getElementById("waterfallDesign").style.display = "block";
+  document.getElementById("gridDesign").style.display = "none";
+  showData(data)
+})
+
+
+// autoplay toggle
+
+document.getElementById("autoplay").addEventListener("click", ()=>{
+  document.getElementById("autoplay").style.display = "none";
+  document.getElementById("autoplayFalse").style.display = "block";
+  showData(data)
+})
+
+document.getElementById("autoplayFalse").addEventListener("click", ()=>{
+  document.getElementById("autoplay").style.display = "block";
+  document.getElementById("autoplayFalse").style.display = "none";
+  showData(data)
 })
