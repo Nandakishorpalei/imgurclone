@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload image</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #17191f;background-size: cover; ">
+    <div id="uploadDiv">
+        <div class="uploadDiv__Navbar">
+            <img
+            class="topDiv__navDiv__leftDiv__logo"
+            src="images/imgurLogo.png"
+            alt=""
+          />
+          <div id="topDiv__navDiv__right">
+            <img
+              src="images/certified.png"
+              alt=""
+              class="topDiv__navDiv__right__certifiedIcon"
+            />
+            <button class="btn btn--blue">Go Ad Free</button>
+            <button class="btn btn--transparent">Sign in</button>
+            <button class="btn">Sign up</button>
+          </div>
+        </div>
+
+        <div class="uploadDiv__contentDiv">
+            <div class="uploadDiv__contentDiv__left">
+                <h3 class="uploadDiv__contentDiv__leftContent">Drop images here</h3>
+            </div>
+            <div class="uploadDiv__contentDiv__right">
+                <div class="uploadDiv__contentDiv__rightContent">
+
+                <div class="uploadDiv__contentDiv__uploadText">
+                    <img class="uploadDiv__contentDiv__camera" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-photo.1ded6245836b46ed24022036f33a84e8.svg" alt="">
+                   &nbsp;&nbsp; Choose Photo or Video
+                </div>
+
+                <div class="uploadDiv__contentDiv__orDiv">
+                    <p class="simpleLine"></p>
+                    or
+                    <p class="simpleLine"></p>
+                </div>
+                <div class="uploadDiv__contentDiv__pasteDiv">
+                    Paste Image or URL
+                </div>
+
+                <div class="uploadDiv__contentDiv__bottomDiv">
+                    <div class="uploadDiv__contentDiv__bottomDiv__left">
+                        <img class="uploadDiv__contentDiv__bottomDiv__images" src="https://s.imgur.com/desktop-assets/desktop-assets/meme.d410b11bc6ba72ecb8b3992971fba0a8.svg" alt="">
+                        <p class="uploadDiv__contentDiv__bottomDiv__text">Meme Gen</p>
+                    </div>
+                    <div class="uploadDiv__contentDiv__bottomDiv__middle">
+                        <img class="uploadDiv__contentDiv__bottomDiv__images" src="https://s.imgur.com/desktop-assets/desktop-assets/vid2gif.30286dc6c4e6d0c822073e0228dc3a4f.svg" alt="">
+                        <p class="uploadDiv__contentDiv__bottomDiv__text">Video to Gif</p>
+                    </div>
+                    <div class="uploadDiv__contentDiv__bottomDiv__right">
+                        <img class="uploadDiv__contentDiv__bottomDiv__images" src="https://s.imgur.com/desktop-assets/desktop-assets/browse.fcd082e3eb7f93767b2b9edb7b3f1c2a.svg" alt="">
+                        <p class="uploadDiv__contentDiv__bottomDiv__text">My Uploads</p>
+                    </div>
+                </div>
+
+                <input type="file" name="" id="fileInput" class="fileInput" >
+
+            </div>
+            </div>
+            <img class="uploadDiv__contentDiv__crossImage" src="images/crossIcon.svg" alt="">
+        </div>
+       <p class="termCondition"> By creating a post, you agree to Imgur's <span>Terms of Service</span> and <span>Privacy Policy</span></p>
+    </div>
+
+
+</body>
+</html>
+<script>
+    // create new post
+
+  const file = document.getElementById("fileInput");
+
+file.addEventListener("change",(el)=>{
+  const uploadData = new FormData()
+  uploadData.append("image", el.target.files[0])
+  fetch("https://api.imgur.com/3/image/", {
+    method: "post",
+    headers:{
+      Authorization: 'Client-ID 72ebaa80e0288fb'
+    },
+    body: uploadData
+  })
+  .then(async(data)=>{
+    let res = await data.json()
+    console.log('res:', res.data.link);
+    alert(`Your image is uploaded: get here ${res.data.link}`);
+    window.location.href= "index.html"
+  })
+  
+})
+</script>
