@@ -67,7 +67,7 @@
 
             </div>
             </div>
-            <img class="uploadDiv__contentDiv__crossImage" src="images/crossIcon.svg" alt="">
+            <img class="uploadDiv__contentDiv__crossImage" src="images/crossIcon.svg" alt="" onclick="closepage()">
         </div>
        <p class="termCondition"> By creating a post, you agree to Imgur's <span>Terms of Service</span> and <span>Privacy Policy</span></p>
     </div>
@@ -76,6 +76,11 @@
 </body>
 </html>
 <script>
+
+function closepage(){
+    window.location.href = "index.html";
+}
+
     // create new post
 
   const file = document.getElementById("fileInput");
