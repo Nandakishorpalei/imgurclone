@@ -60,6 +60,7 @@ short data by several sorting methods like popular, new, recent, etc
 ### Screenshots :camera:
 
 ---
-![1 1](https://images2.imgbox.com/52/c7/DrTp7jQE_o.png)
-![1 2](https://images2.imgbox.com/24/42/9xKcmWJl_o.png)
-![1 3](https://images2.imgbox.com/7f/61/laVvxJVh_o.png)
+![1 1](https://i.imgur.com/RjKC3pI.jpg)
+![1 2](https://i.imgur.com/TPDZXQz.jpg)
+![1 3](https://i.imgur.com/cwmFZiE.jpg)
+![1 4](https://i.imgur.com/uFtsbqt.png)
