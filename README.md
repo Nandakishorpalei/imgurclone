@@ -39,7 +39,7 @@
 - `CSS`
 
 ---
-### Tool Used 🔧
+### Tools Used 🔧
 - `Postman`
 - `Github`
 - `Imgur API`
